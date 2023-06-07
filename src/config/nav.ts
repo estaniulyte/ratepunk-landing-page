@@ -4,7 +4,7 @@ export const navConfig: NavigationConfig = {
   mainNav: [
     {
       title: "Chrome Extension",
-      href: "/chrome-extension",
+      href: "/",
     },
     {
       title: "Price Comparison",
