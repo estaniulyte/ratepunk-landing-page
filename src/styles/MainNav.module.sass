@@ -1,0 +1,55 @@
+@import 'base/base'
+
+.header
+  height: 80px
+  border: $border-style
+  color: $color-mako
+  padding: $section-padding
+
+  img
+    width: 125px
+    height: 32px
+
+  @media (max-width: 800px)
+    height: 56px
+    padding: 12px 16px
+
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    max-width: $max-content-width
+    height: 100%
+    margin: auto
+
+    .navigation
+      display: flex
+      gap: 0 20px
+      @media (max-width: 800px)
+        display: none
+
+      .navItem
+        padding: 10px 16px
+        font-size: 20px
+        font-family: 'Noto Sans', sans-serif
+
+        &:hover
+          color: $color-primary-lighten
+          cursor: pointer
+
+      .activeLink
+        color: $color-primary
+
+  .burgerMenu
+    width: 32
+    height: 32
+    background-color: $color-white
+    display: none
+    border: none
+
+    @media (max-width: 800px)
+      display: flex
+
+      img
+        width: 18px
+        height: 16px
