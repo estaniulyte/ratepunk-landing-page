@@ -1,0 +1,29 @@
+@import 'base/base'
+
+.hidden
+  display: none
+
+.navigation
+  display: none
+  justify-content: center
+  flex-direction: column
+  position: fixed
+  max-height: 234px
+  width: 100%
+  top: 55px
+  right: 0
+  background-color: $color-white
+  border: $border-style
+  border-top: none
+  gap: 8px 0px
+  padding: 23px 0px
+
+  @media (max-width: 800px)
+    display: flex
+
+  .navItem
+    display: flex
+    align-items: center
+    height: 40px
+    width: 100%
+    padding: $section-padding
