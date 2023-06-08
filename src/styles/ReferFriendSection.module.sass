@@ -1,0 +1,17 @@
+@import 'base/base'
+
+.container
+  @include centered-container
+  background-color: $color-secondary
+
+  .content
+    @include wide-centered-content
+    display: grid
+    grid-template-columns: 1fr 1fr
+    min-height: 925px
+
+    @include for-mobile
+      padding: 32px 0px
+      display: flex
+      flex-direction: column
+      justify-self: center
