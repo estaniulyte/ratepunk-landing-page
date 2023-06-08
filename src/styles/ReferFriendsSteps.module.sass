@@ -1,0 +1,53 @@
+@import 'base/base'
+
+.container
+  display: flex
+  flex-direction: column
+  margin: auto
+  padding: 64px
+  gap: 64px
+
+  @include for-mobile
+    padding: 32px 16px
+    gap: 48px
+
+  .card
+    display: flex
+    flex-direction: row
+    gap: 56px
+
+    &:nth-child(2)
+      flex-direction: row-reverse
+      @include for-mobile
+        flex-direction: column
+
+    @include for-mobile
+      flex-direction: column
+      gap: 33px
+
+    .image
+      margin: auto
+
+  .steps
+    display: flex
+    flex-direction: column
+    gap: 16px
+
+    @include for-mobile
+      text-align: center
+
+    .step
+      text-transform: uppercase
+      color: $color-primary
+      font-weight: 600
+      font-size: 20px
+
+    .title
+      text-transform: uppercase
+      font-family: 'Caveat Brush', cursive
+      font-size: 32px
+
+    p
+      line-height: 32px
+      font-size: 20px
+      color: $color-te-papa-green
