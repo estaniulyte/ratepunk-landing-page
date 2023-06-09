@@ -1,0 +1,120 @@
+@import 'base/base'
+
+.footer
+  @include centered-container
+  background-color: $color-whisper
+  color: $color-te-papa-green
+  min-height: 348px
+
+  &__description
+    width: 544px
+    line-height: 24px
+    color: $color-te-papa-green
+    @include for-mobile
+      width: 100%
+
+  &__container
+    @include wide-centered-content
+    padding: 64px 0px
+    min-height: 226px
+    display: grid
+    grid-template-columns: 3fr 1fr 1fr
+    @include for-mobile
+      padding: 48px 16px
+      display: flex
+      flex-direction: column
+      height: none
+
+    &__box
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+
+      img
+        margin-bottom: 32px
+        
+  &__copyright
+    color: $color-rolling-stone
+    font-size: 16px
+    @include for-mobile
+      visibility: hidden
+
+  &__mobile_copyright
+    color: $color-rolling-stone
+    display: none
+    @include for-mobile
+      display: flex
+      margin-top: 48px
+
+
+  &__title
+    font-size: 20px
+    color: $color-te-papa-green
+    text-transform: uppercase
+    margin-bottom: 24px
+    @include for-mobile
+      font-size: 16px
+      margin-bottom: 23px
+      margin-top: 32px
+
+
+  &__navigation
+    display: flex
+    flex-direction: column
+    gap: 16px 0px
+
+    &__item
+      display: flex
+      align-items: center
+      line-height: 24px
+      width: 100%
+      color: $color-te-papa-green
+      transition: color 0.2s ease-in-out
+      &:first-of-type
+        color: $color-primary
+
+      &:hover
+        color: $color-primary-lighten
+
+  &__social_navigation
+    display: flex
+    gap: 0px 8px
+
+    &__item
+      display: flex
+      justify-content: center
+      background-color: $color-primary
+      border: $border-style
+      padding: 8px
+      height: 32px
+      width: 32px
+      border-radius: 8px
+      transition: background-color 0.2s ease-in-out
+
+      &:hover
+        background-color: $color-secondary
+        cursor: pointer
+      
+      img
+        margin: -1px 0px
+
+  &__contact
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    &__social_section
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+    &__email
+      a
+        color: $color-te-papa-green
+        transition: color 0.2s ease-in-out
+        &:hover
+          color: $color-primary-lighten
+      img
+        margin-right: 16px
+
+    > div
+      flex: 1 1 0
