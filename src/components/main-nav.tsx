@@ -30,7 +30,7 @@ export function MainNav({ items, children }: MainNavProps) {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/">
-          <span className="hidden font-bold sm:inline-block">
+          <span>
             <Image
               src={siteConfig.image}
               alt="company logo"
