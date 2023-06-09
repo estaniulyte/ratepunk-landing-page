@@ -2,6 +2,8 @@ import { SiteConfig } from "@/types";
 
 import Logo from "@/assets/logo.svg";
 
+const copyright = String.fromCodePoint(0x00a9);
+
 export const siteConfig: SiteConfig = {
   name: "Ratepunk",
   description:
@@ -13,5 +15,5 @@ export const siteConfig: SiteConfig = {
     appleStore: "https://apps.apple.com/app/ratepunk/id1607823726",
   },
   contactEmail: "hi@ratepunk.com",
-  copyrights: "&#169 2021 Ratepunk. All Rights Reserved.",
+  copyrights: copyright + "2021 Ratepunk. All Rights Reserved.",
 };
