@@ -4,6 +4,14 @@ export type NavItem = {
   disabled?: boolean;
 };
 
+export type SocialNavItem = {
+  title: string;
+  href: string;
+  disabled?: boolean;
+  icon: string | StaticImageData;
+  alt: string;
+};
+
 export type MainNavItem = NavItem;
 
 export type SiteConfig = {
@@ -24,4 +32,8 @@ export type MainNavigationConfig = {
 
 export type NavigationConfig = {
   nav: NavItem[];
+};
+
+export type SocialNavigationConfig = {
+  nav: SocialNavItem[];
 };
