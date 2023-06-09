@@ -1,0 +1,151 @@
+@import 'base/base'
+
+@mixin common-button-input-style-sm
+  height: 56px
+  border: $border-style
+  border-radius: 8px
+  font-size: 16px
+
+@mixin submit-button
+  color: $color-white
+  background-color: $color-primary
+  font-size: 20px
+  @include for-mobile
+    font-size: 16px
+
+.hidden
+  display: none
+
+.container
+  border: $border-style
+  border-radius: 16px
+  background-color: $color-white
+  padding: 64px
+  max-width: 544px
+  max-height: 797px
+  margin: 64px 0px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+  @include for-mobile
+    max-width: 100%
+    min-height: 539px
+    margin: auto
+    padding: 32px 16px
+
+  .title
+    font-size: 48px
+    line-height: 72px
+    font-family: 'Caveat Brush', cursive
+    padding-bottom: 32px
+    color: $color-te-papa-green
+
+  .refferalForm
+    margin-top: 40px
+
+    @include for-mobile
+      margin-top: 24px
+
+    .error
+      color: $color-error
+      font-size: 12px
+      margin-bottom: 7px
+
+    input
+      background-color: $color-white
+      border: $border-style
+      font-size: 20px
+      border-radius: 8px
+      padding: 20px
+      width: 100%
+      height: 64px
+
+      @include for-mobile
+        @include common-button-input-style-sm
+
+    button
+      width: 100%
+      height: 64px
+      @include submit-button
+      border: $border-style
+      border-radius: 8px
+      margin: 16px 0
+      transition: background-color 0.2s ease-in-out
+
+      @include for-mobile
+        @include common-button-input-style-sm
+
+      &:hover
+        cursor: pointer
+        background-color: $color-primary-lighten
+
+      &:disabled
+        background-color: dimgrey
+        color: linen
+
+  .confirmedEmailForm
+    margin-top: 64px
+
+    @include for-mobile
+      margin-top: 24px
+
+    span
+      display: flex
+      gap: 16px
+      margin: 24px 0 16px 0
+    .message
+      font-size: 16px
+      font-weight: bold
+
+    .desktopInput
+      border: $border-style
+      display: flex
+      width: 100%
+      height: 64px
+      border-radius: 8px
+      justify-content: space-between
+
+      @include for-mobile
+        display: none
+
+      input
+        border: none
+        width: 100%
+        border-radius: 8px
+        font-size: 20px
+        color: $color-rolling-stone
+        padding: 20px
+      button
+        @include submit-button
+        border: none
+        min-width: 96px
+        border-radius: 0px 8px 8px 0px
+        border-left: 1px solid #1F343E
+        transition: background-color 0.2s ease-in-out
+
+        &:hover
+          cursor: pointer
+          background-color: $color-primary-lighten
+
+    .mobileInput
+      display: none
+      @include for-mobile
+        display: flex
+        gap: 16px
+        flex-direction: column
+        input
+          @include common-button-input-style-sm
+          color: $color-rolling-stone
+          padding: 18px 16px
+        button
+          @include common-button-input-style-sm
+          @include submit-button
+  .text
+    line-height: 32px
+    color: $color-te-papa-green
+
+  .limits
+    margin-top: 71px
+    color: $color-rolling-stone
+    font-size: 16px
