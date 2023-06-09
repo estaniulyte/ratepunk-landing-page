@@ -13,8 +13,29 @@
   @include for-mobile
     font-size: 16px
 
+.loader
+  width: 35px
+  height: 35px
+  border: 5px solid #FFF
+  border-bottom-color: transparent
+  border-radius: 50%
+  margin-top: 5px
+  display: hidden
+  box-sizing: border-box
+  animation: rotation 1s linear infinite
+
+  @keyframes rotation
+    0%
+      transform: rotate(0deg)
+
+    100%
+      transform: rotate(360deg)
+
 .hidden
   display: none
+
+.show
+  display: inline-block
 
 .friends_form
   border: $border-style
@@ -45,7 +66,7 @@
   &__description
     line-height: 32px
     color: $color-te-papa-green
-  
+
   &__limits
     margin-top: 71px
     color: $color-rolling-stone
