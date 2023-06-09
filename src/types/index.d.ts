@@ -18,6 +18,10 @@ export type SiteConfig = {
   copyrights: string;
 };
 
-export type NavigationConfig = {
+export type MainNavigationConfig = {
   mainNav: MainNavItem[];
+};
+
+export type NavigationConfig = {
+  nav: NavItem[];
 };
