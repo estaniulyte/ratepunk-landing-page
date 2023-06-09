@@ -40,18 +40,18 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.friends_form}>
       <div>
-        <h2 className={styles.title}>REFER FRIENDS AND GET REWARDS</h2>
-        <p className={styles.text}>
+        <h2 className={styles.friends_form__title}>REFER FRIENDS AND GET REWARDS</h2>
+        <p className={styles.friends_form__description}>
           Refer your friends to us and earn hotel booking vouchers. We'll give
           you 1 coin for each friend that installs our extension. Minimum
           cash-out at 20 coins.
         </p>
-        <form className={styles.refferalForm + " " + (confimedEmail ? styles.hidden : " ")}>
-          <span className={styles.error}>{error}</span>
+        <form className={styles.friends_form__refferal_form + " " + (confimedEmail ? styles.hidden : " ")}>
+          <span className={styles.friends_form__refferal_form__error}>{error}</span>
           <input
-            className={styles.inputField}
+            className={styles.friends_form__refferal_form__input}
             type='email'
             required
             placeholder="Enter your email address"
@@ -60,27 +60,28 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
             {/* <Image src={EmailIcon} alt="close" width={128} height={140} /> */}
           </input>
           <button
+            className={styles.friends_form__refferal_form__button}
             onClick={() => setConfimedEmail(!confimedEmail)}
             type='button'
             disabled={!validate()}
           >Get Referral Link</button>
         </form>
-        <form className={styles.confirmedEmailForm + " " + (confimedEmail ? " ": styles.hidden)}>
-          <span className={styles.message}>
+        <form className={styles.friends_form__email_form + " " + (confimedEmail ? " ": styles.hidden)}>
+          <span className={styles.friends_form__email_form__message}>
             <Image src={SuccessIcon} alt="close" width={24} height={24} />
             Your email is confirmed!
           </span>
-          <div className={styles.desktopInput}>
+          <div className={styles.friends_form__email_form__desktop_input}>
             <input type='text' defaultValue="https://ratepunk.com/referral"></input>
             <button>Copy</button>
           </div>
-          <div className={styles.mobileInput}>
+          <div className={styles.friends_form__email_form__mobile_input}>
             <input defaultValue="https://ratepunk.com/referral"></input>
             <button>Copy URL</button>
           </div>
         </form>
       </div>
-      <p className={styles.limits}>Limits on max rewards apply.</p>
+      <p className={styles.friends_form__limits}>Limits on max rewards apply.</p>
     </section>
   );
 }

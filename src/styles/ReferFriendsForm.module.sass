@@ -16,7 +16,7 @@
 .hidden
   display: none
 
-.container
+.friends_form
   border: $border-style
   border-radius: 16px
   background-color: $color-white
@@ -33,26 +33,32 @@
     min-height: 539px
     margin: auto
     padding: 32px 16px
+    max-height: 1200px
 
-  .title
+  &__title
     font-size: 48px
     line-height: 72px
     font-family: 'Caveat Brush', cursive
     padding-bottom: 32px
     color: $color-te-papa-green
 
-  .refferalForm
+  &__description
+    line-height: 32px
+    color: $color-te-papa-green
+
+  &__refferal_form
     margin-top: 40px
 
     @include for-mobile
       margin-top: 24px
 
-    .error
+    &__error
       color: $color-error
       font-size: 12px
       margin-bottom: 7px
+      line-height: 24px
 
-    input
+    &__input
       background-color: $color-white
       border: $border-style
       font-size: 20px
@@ -64,7 +70,7 @@
       @include for-mobile
         @include common-button-input-style-sm
 
-    button
+    &__button
       width: 100%
       height: 64px
       @include submit-button
@@ -84,21 +90,20 @@
         background-color: dimgrey
         color: linen
 
-  .confirmedEmailForm
+  &__email_form
     margin-top: 64px
 
     @include for-mobile
       margin-top: 24px
 
-    span
+    &__message
+      font-size: 16px
+      font-weight: bold
       display: flex
       gap: 16px
       margin: 24px 0 16px 0
-    .message
-      font-size: 16px
-      font-weight: bold
 
-    .desktopInput
+    &__desktop_input
       border: $border-style
       display: flex
       width: 100%
@@ -116,6 +121,7 @@
         font-size: 20px
         color: $color-rolling-stone
         padding: 20px
+
       button
         @include submit-button
         border: none
@@ -128,24 +134,23 @@
           cursor: pointer
           background-color: $color-primary-lighten
 
-    .mobileInput
+    &__mobile_input
       display: none
       @include for-mobile
         display: flex
         gap: 16px
         flex-direction: column
+
         input
           @include common-button-input-style-sm
           color: $color-rolling-stone
           padding: 18px 16px
+          
         button
           @include common-button-input-style-sm
           @include submit-button
-  .text
-    line-height: 32px
-    color: $color-te-papa-green
 
-  .limits
+  &__limits
     margin-top: 71px
     color: $color-rolling-stone
     font-size: 16px
