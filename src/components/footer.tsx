@@ -37,7 +37,7 @@ export function Footer({ children }: FooterProps) {
           </div>
         </div>
         <div>
-          <h4 className={styles.footer__title}>Quick links</h4>
+          <h3 className={styles.footer__title}>Quick links</h3>
           <nav className={styles.footer__navigation}>
             {quickLinksConfig.nav?.map((item, index) => (
               <Link
@@ -52,12 +52,12 @@ export function Footer({ children }: FooterProps) {
         </div>
         <div className={styles.footer__contact}>
           <div className={styles.footer__contact__email}>
-            <h4 className={styles.footer__title}>Contact</h4>
+            <h3 className={styles.footer__title}>Contact</h3>
             <Image src={EmailIcon} alt="email" width={16} height={13} />
             <Link href="mailto:hi@ratepunk.com">{siteConfig.contactEmail}</Link>
           </div>
           <div className={styles.footer__contact__social_section}>
-            <h4 className={styles.footer__title}>Social</h4>
+            <h3 className={styles.footer__title}>Social</h3>
             <nav className={styles.footer__social_navigation}>
               {socialLinksConfig.nav?.map((item, index) => (
                 <Link
