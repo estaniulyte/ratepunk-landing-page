@@ -1,0 +1,64 @@
+@import 'base/base'
+
+.store
+  @include centered-container
+  background-color: $color-riverbed
+  color: $color-white
+
+  &__container
+    @include wide-centered-content
+    min-height: 144px
+    display: flex
+    flex-direction: row
+    height: 100%
+    gap: 16px
+    align-items: center
+
+    @include for-mobile
+      flex-direction: column
+      margin: 32px 16px
+
+  &__card
+    display: flex
+    height: 80px
+    width: 312px
+    border: $border-style
+    border-radius: 16px
+    align-self: center
+    padding: 14px 24px
+    gap: 16px
+    transition: color, background-color 0.2s ease-in-out
+
+    &:hover
+      background-color: $color-secondary
+      color: $color-te-papa-green
+      cursor: pointer
+
+    img
+      margin: -4px 0 0 0
+
+    p
+      font-size: 16px
+      font-weight: 300
+    &__title
+      font-size: 20px
+      font-weight: 600
+      text-transform: lowercase
+
+    @include for-mobile
+      width: 100%
+
+  &__reviews
+    display: flex
+    flex-direction: row
+    align-items: center
+    margin: 0px 16px
+  
+    p
+      margin-left: 16px
+      font-size: 20px
+      font-weight: 300
+
+      @include for-mobile
+        font-size: 16px
+
