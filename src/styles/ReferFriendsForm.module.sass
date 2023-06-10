@@ -116,6 +116,24 @@
         background-color: dimgrey
         color: linen
 
+    &__input_container
+      position: relative
+
+      & > img
+        position: absolute
+        top: 24px
+        left: 20px
+
+        @include for-mobile
+          top: 21px
+          left: 16px
+
+      & > input
+        padding-left: 60px
+
+        @include for-mobile
+          padding-left: 48px
+
   &__email_form
     margin-top: 64px
 

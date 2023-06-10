@@ -60,8 +60,6 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
       "$2b$10$/7cn9b9aQTdmJvjoL9ZOqe0e/O3mliHGXtM3sIdIMQcZjbxfYC2.W"
     );
     req.send(`{"email": "${email}"}`);
-
-    console.log(req.status);
   };
 
   return (
@@ -86,15 +84,18 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
           <span className={styles.friends_form__refferal_form__error}>
             {error}
           </span>
-          <input
-            className={styles.friends_form__refferal_form__input}
-            type="email"
-            required
-            placeholder="Enter your email address"
-            onChange={handleEmailChange}
-          >
-            {/* <Image src={EmailIcon} alt="close" width={128} height={140} /> */}
-          </input>
+          <div className={styles.friends_form__refferal_form__input_container}>
+            <Image src={EmailIcon} alt="email" width={20} height={16} />
+            <input
+              className={styles.friends_form__refferal_form__input}
+              type="email"
+              required
+              placeholder="Enter your email address"
+              onChange={handleEmailChange}
+            >
+              {/* <Image src={EmailIcon} alt="close" width={128} height={140} /> */}
+            </input>
+          </div>
           <button
             className={styles.friends_form__refferal_form__button}
             type="submit"
