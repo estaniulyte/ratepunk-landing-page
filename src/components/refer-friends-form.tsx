@@ -30,6 +30,11 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
     else if (event.target.value.length > 5) setError("");
   };
 
+  const copyReferralLink = (event: any) => {
+    event.preventDefault();
+    navigator.clipboard.writeText("https://ratepunk.com/referral")
+  }
+
   const [confimedEmail, setConfimedEmail] = useState<boolean>(false);
 
   const validate = () => {
@@ -127,11 +132,11 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
               type="text"
               defaultValue="https://ratepunk.com/referral"
             ></input>
-            <button>Copy</button>
+            <button onClick={copyReferralLink}>Copy</button>
           </div>
           <div className={styles.friends_form__email_form__mobile_input}>
             <input defaultValue="https://ratepunk.com/referral"></input>
-            <button>Copy URL</button>
+            <button onClick={copyReferralLink}>Copy URL</button>
           </div>
         </form>
       </div>
