@@ -16,7 +16,7 @@
   &:hover
     cursor: pointer
     background-color: $color-primary-lighten
-      
+
   @include for-mobile
     font-size: 16px
     &:active, &:visited
@@ -152,6 +152,13 @@
     @include for-mobile
       margin-top: 24px
 
+    &__info_message
+      margin: 10px 0
+      padding: 10px
+      border-radius: 3px
+      color: $success-message-text
+      background-color: $success-message-background
+
     &__message
       font-size: 16px
       font-weight: bold
@@ -189,13 +196,13 @@
         &:hover
           cursor: pointer
           background-color: $color-primary-lighten
-      
+
       @include for-mobile
         display: none
 
     &__mobile_input
       display: none
-      
+
       button
         @include common-button-input-style-sm
         @include submit-button

@@ -16,6 +16,8 @@ interface ReferFriendsFormProps {
 export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
+  const [copied, setCopied] = useState<boolean>(false);
+  const [confimedEmail, setConfimedEmail] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
   var emailFormat = /\S+@\S+\.\S+/;
@@ -33,9 +35,8 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
   const copyReferralLink = (event: any) => {
     event.preventDefault();
     navigator.clipboard.writeText("https://ratepunk.com/referral")
+    setCopied(true)
   }
-
-  const [confimedEmail, setConfimedEmail] = useState<boolean>(false);
 
   const validate = () => {
     return email.length && emailFormat.test(email);
@@ -134,6 +135,7 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
             ></input>
             <button onClick={copyReferralLink}>Copy</button>
           </div>
+          { copied ? <p className={styles.friends_form__email_form__info_message}>Link is coppied! </p>: ""}
           <div className={styles.friends_form__email_form__mobile_input}>
             <input defaultValue="https://ratepunk.com/referral"></input>
             <button onClick={copyReferralLink}>Copy URL</button>
