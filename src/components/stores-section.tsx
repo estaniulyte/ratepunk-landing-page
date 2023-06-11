@@ -38,17 +38,17 @@ export function StoresSection({ children }: StoresSectionProps) {
         {items?.map((item, index) => (
           <Link href={item.href} key={index} className={styles.store__card}>
             <div>
-              <Image src={item.image} alt="stores" width={60} height={52} />
+              <Image className={styles.store__card__image} src={item.image} alt="stores" width={60} height={52} />
             </div>
             <div>
-              <p>avaliable in the</p>
+              <p className={styles.store__card__text}>avaliable in the</p>
               <h2 className={styles.store__card__title}>{item.title}</h2>
             </div>
           </Link>
         ))}
         <div className={styles.store__reviews}>
           <DynamicStar className={styles.store__reviews__stars} rating={4.4} outlined={true} width={21} height={21} emptyStarColor="white" />
-          <p>Chrome Stores reviews</p>
+          <p className={styles.store__reviews__text}>Chrome Stores reviews</p>
         </div>
       </div>
     </div>

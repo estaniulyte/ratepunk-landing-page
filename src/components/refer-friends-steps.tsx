@@ -34,16 +34,16 @@ export function ReferFriendsSteps({ children }: ReferFriendsStepsProps) {
     },
   ];
   return (
-    <section className={styles.container}>
+    <section className={styles.steps_container}>
       {items?.map((item) => (
-        <div className={styles.card} key={item.id}>
-          <div className={styles.image}>
+        <div className={styles.steps_container__card} key={item.id}>
+          <div className={styles.steps_container__card__image}>
             <Image src={item.image} alt="close" width={128} height={140} />
           </div>
-          <div className={styles.steps}>
-            <span className={styles.step}>Step {item.id}</span>
-            <h5 className={styles.title}>{item.title}</h5>
-            <p>{item.text}</p>
+          <div className={styles.steps_container__card__description}>
+            <span className={styles.steps_container__card__description__number}>Step {item.id}</span>
+            <h5 className={styles.steps_container__card__description__title}>{item.title}</h5>
+            <p className={styles.steps_container__card__description__text}>{item.text}</p>
           </div>
         </div>
       ))}

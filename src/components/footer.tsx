@@ -23,6 +23,7 @@ export function Footer({ children }: FooterProps) {
             <Link href="/">
               <span>
                 <Image
+                  className={styles.footer__logo}
                   src={siteConfig.image}
                   alt="company logo"
                   width={125}
@@ -65,7 +66,7 @@ export function Footer({ children }: FooterProps) {
                   key={index}
                   href={item.disabled ? "#" : item.href}
                 >
-                  <Image src={item.icon} alt={item.alt} width={16} height={16} />
+                  <Image className={styles.footer__social_navigation__item__icon} src={item.icon} alt={item.alt} width={16} height={16} />
                 </Link>
               ))}
             </nav>

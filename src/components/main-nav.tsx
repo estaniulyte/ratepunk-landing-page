@@ -28,10 +28,11 @@ export function MainNav({ items, children }: MainNavProps) {
 
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
+      <div className={styles.topbar}>
         <Link href="/">
           <span>
             <Image
+              className={styles.header__image}
               src={siteConfig.image}
               alt="company logo"
               width={125}
@@ -40,13 +41,13 @@ export function MainNav({ items, children }: MainNavProps) {
           </span>
         </Link>
         {items?.length ? (
-          <nav className={styles.navigation}>
+          <nav className={styles.topbar__navigation}>
             {items?.map((item, index) => (
               <Link
                 className={
-                  styles.navItem +
+                  styles.topbar__navigation__item +
                   " " +
-                  (pathname == item.href ? styles.activeLink : "")
+                  (pathname == item.href ? styles.active_link : "")
                 }
                 key={index}
                 href={item.disabled ? "#" : item.href}
@@ -57,13 +58,13 @@ export function MainNav({ items, children }: MainNavProps) {
           </nav>
         ) : null}
         <button
-          className={styles.burgerMenu}
+          className={styles.topbar__burger_menu}
           onClick={() => setShowMobileMenu(!showMobileMenu)}
         >
           {showMobileMenu ? (
-            <Image src={Close} alt="close" width={2} height={2} />
+            <Image className={styles.topbar__burger_menu__icon} src={Close} alt="close" width={2} height={2} />
           ) : (
-            <Image src={Menu} alt="menu" width={2} height={2} />
+            <Image className={styles.topbar__burger_menu__icon} src={Menu} alt="menu" width={2} height={2} />
           )}
         </button>
       </div>
