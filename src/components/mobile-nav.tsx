@@ -13,12 +13,12 @@ interface MobileNavProps {
 
 export function MobileNav({ show, items, children }: MobileNavProps) {
   return (
-    <div className={show ? " " : styles.hidden}>
+    <div className={show ? styles.shown : styles.hidden}>
       {items?.length ? (
-        <nav className={styles.navigation}>
+        <nav className={styles.mobile_navigation}>
           {items?.map((item, index) => (
             <Link
-              className={styles.navItem}
+              className={styles.mobile_navigation__item}
               key={index}
               href={item.disabled ? "#" : item.href}
             >

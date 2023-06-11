@@ -1,14 +1,38 @@
 @import 'base/base'
 
 .hidden
-  display: none
+  .mobile_navigation
+    visibility: hidden
+    padding: 0px
+    top: 55px
+    height: 0px
+    transition: all .9s ease-in-out
 
-.navigation
-  display: none
+    &__item
+      opacity: 0
+      visibility: hidden
+      height: 40px
+      transition: all .5s ease-in-out
+
+.shown
+  .mobile_navigation
+    visibility: visible
+    max-height: 180px
+    top: 55px
+    transition: all .7s
+
+    &__item
+      height: 40px
+      visibility: visible
+      opacity: 1
+      transition: all .9s ease-in-out
+
+.mobile_navigation
   justify-content: center
   flex-direction: column
   position: fixed
-  max-height: 234px
+  max-height: 180px
+  height: 180px
   width: 100%
   top: 55px
   right: 0
@@ -21,9 +45,9 @@
   @include for-mobile
     display: flex
 
-  .navItem
+  &__item
+    opacity: 0.5
     display: flex
     align-items: center
-    height: 40px
     width: 100%
     padding: $section-padding
