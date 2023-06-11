@@ -1,5 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { MainNavItem } from "@/types";
 
@@ -12,13 +13,16 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ show, items, children }: MobileNavProps) {
+  const pathname = usePathname();
+
   return (
     <div className={show ? styles.shown : styles.hidden}>
       {items?.length ? (
         <nav className={styles.mobile_navigation}>
           {items?.map((item, index) => (
             <Link
-              className={styles.mobile_navigation__item}
+              className={styles.mobile_navigation__item + " " +
+                (pathname == item.href ? styles.active_link : "")}
               key={index}
               href={item.disabled ? "#" : item.href}
             >
