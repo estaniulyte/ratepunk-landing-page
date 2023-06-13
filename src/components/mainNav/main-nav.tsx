@@ -11,7 +11,7 @@ import { MainNavItem } from "@/types";
 
 import MobileNav from "@/components/mobileNav";
 
-import styles from "/MainNav.module.sass";
+import styles from "./MainNav.module.sass";
 
 import Close from "@/assets/close.svg";
 import Menu from "@/assets/menu.svg";
