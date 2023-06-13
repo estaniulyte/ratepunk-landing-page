@@ -32,7 +32,7 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
     else if (event.target.value.length > 5) setError("");
   };
 
-  const copyReferralLink = (event: any) => {
+  const copyReferralLink = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
     navigator.clipboard.writeText("https://ratepunk.com/referral")
     setCopied(true)
