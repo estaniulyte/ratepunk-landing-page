@@ -2,6 +2,8 @@
 
 import { FormEvent, useState } from "react";
 
+import axios from "axios";
+
 import Image from "next/image";
 
 import EmailIcon from "@/assets/email.svg";
@@ -32,40 +34,46 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
     else if (event.target.value.length > 5) setError("");
   };
 
-  const copyReferralLink = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const copyReferralLink = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     event.preventDefault();
-    navigator.clipboard.writeText("https://ratepunk.com/referral")
-    setCopied(true)
-  }
+    navigator.clipboard.writeText("https://ratepunk.com/referral");
+    setCopied(true);
+  };
 
   const validate = () => {
     return email.length && emailFormat.test(email);
   };
 
-  const onSubmit = (event: FormEvent) => {
+  const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setLoading(true);
 
-    let req = new XMLHttpRequest();
-
-    req.onreadystatechange = () => {
-      if (req.readyState == XMLHttpRequest.DONE) {
-        setConfimedEmail(!confimedEmail);
-        setLoading(false);
-      }
+    const headers = {
+      "Content-Type": "application/json",
+      "X-Master-Key": process.env.NEXT_PUBLIC_JSONBIN_API_KEY,
     };
 
-    req.open(
-      "PUT",
-      "https://api.jsonbin.io/v3/b/"+ process.env.NEXT_PUBLIC_JSONBIN_BIN_ID,
-      true
-    );
-    req.setRequestHeader("Content-Type", "application/json");
-    req.setRequestHeader(
-      "X-Master-Key",
-      process.env.NEXT_PUBLIC_JSONBIN_API_KEY!,
-    );
-    req.send(`{"email": "${email}"}`);
+    const emailData = {
+      email: email,
+    };
+
+    const url =
+      "https://api.jsonbin.io/v3/b/" + process.env.NEXT_PUBLIC_JSONBIN_BIN_ID;
+
+    try {
+      const { data } = await axios.put(url, emailData, { headers });
+      console.log(data)
+      setConfimedEmail(!confimedEmail);
+      setLoading(false);
+    } catch (err: any) {
+      if (err.response.status === 404) {
+        console.log("Resource could not be found!");
+      } else {
+        console.log(err.message);
+      }
+    }
   };
 
   return (
@@ -75,8 +83,8 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
           REFER FRIENDS AND GET REWARDS
         </h2>
         <p className={styles.friends_form__description}>
-          Refer your friends to us and earn hotel booking vouchers. We&apos;ll give
-          you 1 coin for each friend that installs our extension. Minimum
+          Refer your friends to us and earn hotel booking vouchers. We&apos;ll
+          give you 1 coin for each friend that installs our extension. Minimum
           cash-out at 20 coins.
         </p>
         <form
@@ -98,8 +106,7 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
               required
               placeholder="Enter your email address"
               onChange={handleEmailChange}
-            >
-            </input>
+            ></input>
           </div>
           <button
             className={styles.friends_form__refferal_form__button}
@@ -134,7 +141,13 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
             ></input>
             <button onClick={copyReferralLink}>Copy</button>
           </div>
-          { copied ? <p className={styles.friends_form__email_form__info_message}>Link is coppied! </p>: ""}
+          {copied ? (
+            <p className={styles.friends_form__email_form__info_message}>
+              Link is coppied!{" "}
+            </p>
+          ) : (
+            ""
+          )}
           <div className={styles.friends_form__email_form__mobile_input}>
             <input defaultValue="https://ratepunk.com/referral"></input>
             <button onClick={copyReferralLink}>Copy URL</button>
