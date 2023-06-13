@@ -8,7 +8,7 @@ import { socialLinksConfig } from "@/config/nav";
 
 import EmailIcon from "@/assets/email-footer.svg";
 
-import styles from "@/styles/Footer.module.sass";
+import styles from "./Footer.module.sass";
 
 interface FooterProps {
   children?: React.ReactNode;
@@ -31,7 +31,9 @@ export function Footer({ children }: FooterProps) {
                 />
               </span>
             </Link>
-            <p className={styles.footer__description}>{siteConfig.description}</p>
+            <p className={styles.footer__description}>
+              {siteConfig.description}
+            </p>
           </div>
           <div className={styles.footer__copyright}>
             <p>{siteConfig.copyrights}</p>
@@ -66,7 +68,13 @@ export function Footer({ children }: FooterProps) {
                   key={index}
                   href={item.disabled ? "#" : item.href}
                 >
-                  <Image className={styles.footer__social_navigation__item__icon} src={item.icon} alt={item.alt} width={16} height={16} />
+                  <Image
+                    className={styles.footer__social_navigation__item__icon}
+                    src={item.icon}
+                    alt={item.alt}
+                    width={16}
+                    height={16}
+                  />
                 </Link>
               ))}
             </nav>

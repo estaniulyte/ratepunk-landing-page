@@ -6,7 +6,7 @@ import CollectCoinsIcon from '@/assets/collect-coins.svg'
 import VoucherIcon from '@/assets/voucher.svg'
 import InviteIcon from '@/assets/invite.svg'
 
-import styles from "@/styles/ReferFriendsSteps.module.sass";
+import styles from "./ReferFriendsSteps.module.sass";
 
 interface ReferFriendsStepsProps {
   children?: React.ReactNode;

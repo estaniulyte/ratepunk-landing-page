@@ -1,6 +1,6 @@
-import { ReferFriendSection } from '@/components/refer-friends-section'
-import { StoresSection } from '@/components/stores-section'
-import { Footer } from '@/components/footer'
+import ReferFriendSection from '@/components/referFriendsSection'
+import StoresSection from '@/components/storesSection'
+import Footer from '@/components/footer'
 
 export default function Home() {
   return (

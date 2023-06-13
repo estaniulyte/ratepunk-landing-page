@@ -1,6 +1,6 @@
 import { navConfig } from "@/config/nav";
 
-import { MainNav } from "@/components/main-nav";
+import MainNav from "@/components/mainNav";
 
 interface HomeLayoutProps {
   children: React.ReactNode;

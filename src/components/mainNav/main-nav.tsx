@@ -9,9 +9,9 @@ import { siteConfig } from "@/config/site";
 
 import { MainNavItem } from "@/types";
 
-import { MobileNav } from "@/components/mobile-nav";
+import MobileNav from "@/components/mobileNav";
 
-import styles from "@/styles/MainNav.module.sass";
+import styles from "/MainNav.module.sass";
 
 import Close from "@/assets/close.svg";
 import Menu from "@/assets/menu.svg";
@@ -62,9 +62,21 @@ export function MainNav({ items, children }: MainNavProps) {
           onClick={() => setShowMobileMenu(!showMobileMenu)}
         >
           {showMobileMenu ? (
-            <Image className={styles.topbar__burger_menu__icon} src={Close} alt="close" width={2} height={2} />
+            <Image
+              className={styles.topbar__burger_menu__icon}
+              src={Close}
+              alt="close"
+              width={2}
+              height={2}
+            />
           ) : (
-            <Image className={styles.topbar__burger_menu__icon} src={Menu} alt="menu" width={2} height={2} />
+            <Image
+              className={styles.topbar__burger_menu__icon}
+              src={Menu}
+              alt="menu"
+              width={2}
+              height={2}
+            />
           )}
         </button>
       </div>

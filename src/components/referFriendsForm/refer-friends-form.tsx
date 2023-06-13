@@ -7,7 +7,7 @@ import Image from "next/image";
 import EmailIcon from "@/assets/email.svg";
 import SuccessIcon from "@/assets/success.svg";
 
-import styles from "@/styles/ReferFriendsForm.module.sass";
+import styles from "./ReferFriendsForm.module.sass";
 
 interface ReferFriendsFormProps {
   children?: React.ReactNode;
@@ -63,7 +63,7 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
     req.setRequestHeader("Content-Type", "application/json");
     req.setRequestHeader(
       "X-Master-Key",
-      "$2b$10$/7cn9b9aQTdmJvjoL9ZOqe0e/O3mliHGXtM3sIdIMQcZjbxfYC2.W"
+      "$2b$10$/7cn9b9aQTdmJvjoL9ZOqe0e/O3mliHGXtM3sIdIMQcZjbxfYC2.W",
     );
     req.send(`{"email": "${email}"}`);
   };
@@ -99,7 +99,6 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
               placeholder="Enter your email address"
               onChange={handleEmailChange}
             >
-              {/* <Image src={EmailIcon} alt="close" width={128} height={140} /> */}
             </input>
           </div>
           <button

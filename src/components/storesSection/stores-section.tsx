@@ -10,7 +10,7 @@ import { siteConfig } from "@/config/site";
 import ChromeImage from "@/assets/chrome.svg";
 import AppleImage from "@/assets/apple.svg";
 
-import styles from "@/styles/StoresSection.module.sass";
+import styles from "./StoresSection.module.sass";
 
 import { DynamicStar } from "react-dynamic-star";
 

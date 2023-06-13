@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 import { MainNavItem } from "@/types";
 
-import styles from "@/styles/MobileNav.module.sass";
+import styles from "./MobileNav.module.sass";
 
 interface MobileNavProps {
   show: boolean;
