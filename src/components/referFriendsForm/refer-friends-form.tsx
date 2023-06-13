@@ -57,13 +57,13 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
 
     req.open(
       "PUT",
-      "https://api.jsonbin.io/v3/b/648372e78e4aa6225eabc5fa",
+      "https://api.jsonbin.io/v3/b/"+ process.env.NEXT_PUBLIC_JSONBIN_BIN_ID,
       true
     );
     req.setRequestHeader("Content-Type", "application/json");
     req.setRequestHeader(
       "X-Master-Key",
-      "$2b$10$/7cn9b9aQTdmJvjoL9ZOqe0e/O3mliHGXtM3sIdIMQcZjbxfYC2.W",
+      process.env.NEXT_PUBLIC_JSONBIN_API_KEY!,
     );
     req.send(`{"email": "${email}"}`);
   };
