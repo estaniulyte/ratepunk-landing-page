@@ -75,7 +75,7 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
           REFER FRIENDS AND GET REWARDS
         </h2>
         <p className={styles.friends_form__description}>
-          Refer your friends to us and earn hotel booking vouchers. We'll give
+          Refer your friends to us and earn hotel booking vouchers. We&apos;ll give
           you 1 coin for each friend that installs our extension. Minimum
           cash-out at 20 coins.
         </p>
