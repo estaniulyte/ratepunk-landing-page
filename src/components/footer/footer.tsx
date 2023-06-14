@@ -6,8 +6,6 @@ import { siteConfig } from "@/config/site";
 import { quickLinksConfig } from "@/config/nav";
 import { socialLinksConfig } from "@/config/nav";
 
-import EmailIcon from "@/assets/email-footer.svg";
-
 import styles from "./Footer.module.sass";
 
 interface FooterProps {
@@ -56,7 +54,7 @@ export function Footer({ children }: FooterProps) {
         <div className={styles.footer__contact}>
           <div className={styles.footer__contact__email}>
             <h3 className={styles.footer__title}>Contact</h3>
-            <Image src={EmailIcon} alt="email" width={16} height={13} />
+            <Image src="/email-footer.svg" alt="email" width={16} height={13} />
             <Link href="mailto:hi@ratepunk.com">{siteConfig.contactEmail}</Link>
           </div>
           <div className={styles.footer__contact__social_section}>

@@ -2,10 +2,6 @@ import * as React from "react";
 
 import Image from "next/image";
 
-import CollectCoinsIcon from '@/assets/collect-coins.svg'
-import VoucherIcon from '@/assets/voucher.svg'
-import InviteIcon from '@/assets/invite.svg'
-
 import styles from "./ReferFriendsSteps.module.sass";
 
 interface ReferFriendsStepsProps {
@@ -18,19 +14,19 @@ export function ReferFriendsSteps({ children }: ReferFriendsStepsProps) {
       id: 1,
       title: "Invite friends",
       text: "Refer friends with your unique referral link.",
-      image: InviteIcon,
+      image: "/invite.svg",
     },
     {
       id: 2,
       title: "Collect coins",
       text: "Get 1 coin for each friend that installs our extension using your referral link.",
-      image: CollectCoinsIcon,
+      image: "/collect-coins.svg",
     },
     {
       id: 3,
       title: "Get voucher",
       text: "Redeem for a $20 hotel booking voucher once you collect 20 coins.",
-      image: VoucherIcon
+      image: "/voucher.svg"
     },
   ];
   return (

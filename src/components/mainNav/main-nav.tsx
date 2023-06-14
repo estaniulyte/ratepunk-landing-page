@@ -13,9 +13,6 @@ import MobileNav from "@/components/mobileNav";
 
 import styles from "./MainNav.module.sass";
 
-import Close from "@/assets/close.svg";
-import Menu from "@/assets/menu.svg";
-
 interface MainNavProps {
   items: MainNavItem[];
   children?: React.ReactNode;
@@ -64,7 +61,7 @@ export function MainNav({ items, children }: MainNavProps) {
           {showMobileMenu ? (
             <Image
               className={styles.topbar__burger_menu__icon}
-              src={Close}
+              src="/close.svg"
               alt="close"
               width={2}
               height={2}
@@ -72,7 +69,7 @@ export function MainNav({ items, children }: MainNavProps) {
           ) : (
             <Image
               className={styles.topbar__burger_menu__icon}
-              src={Menu}
+              src="/menu.svg"
               alt="menu"
               width={2}
               height={2}

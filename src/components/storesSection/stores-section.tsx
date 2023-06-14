@@ -7,9 +7,6 @@ import Image from "next/image";
 
 import { siteConfig } from "@/config/site";
 
-import ChromeImage from "@/assets/chrome.svg";
-import AppleImage from "@/assets/apple.svg";
-
 import styles from "./StoresSection.module.sass";
 
 import { DynamicStar } from "react-dynamic-star";
@@ -23,12 +20,12 @@ export function StoresSection({ children }: StoresSectionProps) {
     {
       title: "Chrome web Store",
       href: siteConfig.links.chromeStore,
-      image: ChromeImage,
+      image: "/chrome.svg",
     },
     {
       title: "Apple app Store",
       href: siteConfig.links.appleStore,
-      image: AppleImage,
+      image: "/apple.svg",
     },
   ];
 

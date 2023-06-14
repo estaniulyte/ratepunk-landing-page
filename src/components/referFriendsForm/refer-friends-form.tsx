@@ -6,9 +6,6 @@ import axios from "axios";
 
 import Image from "next/image";
 
-import EmailIcon from "@/assets/email.svg";
-import SuccessIcon from "@/assets/success.svg";
-
 import styles from "./ReferFriendsForm.module.sass";
 
 interface ReferFriendsFormProps {
@@ -99,7 +96,7 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
             {error}
           </span>
           <div className={styles.friends_form__refferal_form__input_container}>
-            <Image src={EmailIcon} alt="email" width={20} height={16} />
+            <Image src="/email.svg" alt="email" width={20} height={16} />
             <input
               className={styles.friends_form__refferal_form__input}
               type="email"
@@ -131,7 +128,7 @@ export function ReferFriendsForm({ children }: ReferFriendsFormProps) {
           }
         >
           <span className={styles.friends_form__email_form__message}>
-            <Image src={SuccessIcon} alt="close" width={24} height={24} />
+            <Image src="/success.svg" alt="close" width={24} height={24} />
             Your email is confirmed!
           </span>
           <div className={styles.friends_form__email_form__desktop_input}>
