@@ -9,7 +9,7 @@
 
 ## Features:
 
-- Single page landing for desktop and mobile
+- Landing page for desktop and mobile
 - JSONBIN used to save only the last entered email
 - Email validation
 
